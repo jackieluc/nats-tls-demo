@@ -8,7 +8,7 @@ services:
     ports:
       - "4222:4222"
       - "8222:8222"
-    hostname: nats-server
+    hostname: nats
     restart: always
     volumes:
       - ./server-certs:/home/app/certs
@@ -21,6 +21,7 @@ services:
       - nats
     links:
       - nats
+    hostname: api
     ports:
       - "8080:8080"
     restart: always

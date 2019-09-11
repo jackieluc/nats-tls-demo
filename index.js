@@ -8,7 +8,7 @@ var tlsOptions = {
   ca: [ fs.readFileSync('./certs/ca-cert.pem') ]
 };
 
-var nats = NATS.connect({url: 'nats://docker.for.mac.localhost:4222', tls: tlsOptions});
+var nats = NATS.connect({url: 'nats://nats:4222', tls: tlsOptions});
 
  
 nats.on('connect', function(nats) {
